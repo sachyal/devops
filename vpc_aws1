@@ -1,0 +1,52 @@
+AWS CONSOLE (How to create VPC)
+
+ CLICK ON VPC
+• Create VPC 
+Give name, IPv4 (for eg: 10.0.0.0/16) then click on create VPC
+• Create subnets 
+Select VPC
+Subnet(s) name (appserver/dbserver/proxy or jump server) 
+Select zone (1a/1b/1c for Mumbai)
+Give IPv4 CIDR block (10.0.x.0/24)
+Add subnet (if want to create multiple subnets)
+Click on create subnet
+• Create internet gate way
+Name tag (give any name Eg: jumpserver-igw)
+Click on create internet gate way
+After that attach to VPC
+• NAT gate way 
+Name (appserver-ngw)
+Select a public subnet (must be public subnet eg: jump server )
+Click on allocate elastic IP
+Create NAT gate way
+ (Note: for creating NAT gateway charges applied
+Note: for not usage of elastic IP also charges applied)
+• Route –Tables
+Click on Create Route Table
+Name tag (Eg: appserver-Routetable/ jumpserver-routetable)
+Select VPC
+Create
+Now select appserver-routetable
+ Goto routesedit routes add route give destination (0.0.0.0/0), target (NAT-GW) saveroutes
+ Click subnet associationsedit subnet associationsselect appserver(s)
+Now select proxyserver-routetable
+ Goto routesedit routes add route give destination (0.0.0.0/0), target (internet gateway)  saveroutes
+ Click subnet associationsedit subnet associationsselect proxyserver
+
+  
+Deletion of VPC
+==============
+
+1 Delete all resources like ec2-instances
+
+2 Delete the NAT gateway
+
+3 Delete subnets
+
+4 Detach IGW with VPC  and delete IGW
+
+5 Delete Route Tables
+
+6 De-associate  Elastic IP and release elastic IP (If you forgot to release elastic IP, heavy charges will be applicable)
+
+7 Delete VPC
