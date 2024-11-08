@@ -1,0 +1,44 @@
+
+1) create VPC
+
+2) Ec2- instance
+
+instace=virtual machine
+
+two types harddisks
+
+1) HDD Hard Disk Drive  MBps  MB/s
+
+2) SSD  Solid State Drive IOPS  IO operation per second
+
+public server/jump server/proxy server
+
+
+0-65535      (65536 Ports are available)
+
+65536 -- 1024 ports allocated for os services
+
+newly installed services that should run at a port which is less than1024
+
+65536 all these are locked. No body can access the server until you open the port.
+
+
+If you want to login into the server, that default port should be open. otherwise you cant login into the machine.
+
+0.0.0.0/0 --- any IP can access this server
+
+
+download these two softwares:
+
+1) putty
+
+2) putty gen
+
+steps to login into machine
+-----------------------------
+1) downloaded keys           rhel.pem    ubuntu.pem
+
+2) convert .pem into .ppk  file  --- puttygen
+
+3) login into the machine  -- putty   (IP, Port and Key)
+
