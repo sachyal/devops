@@ -1,0 +1,16 @@
+WinSCP    Windows   SCP  Securely Copying
+
+
+---------------------------------------------------------------
+    from  to   Tool
+---------------------------------------------------------------
+a) windows   windows   RDP
+
+
+b) Windows  linux   WinSCP
+
+
+c) linux  linux   putty, mobaxterm
+
+
+d) linux  windows   NOT USED
